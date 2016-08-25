@@ -1,6 +1,7 @@
 ﻿Public Class Proxy
 
-    Public Shared Function [Get](Url As String, LoggdinUser As User) As String
+    Public Shared Function [Get](Url As String) As String
+        Dim LoggdinUser = New UserMGM().getUser
         Dim req As System.Net.WebRequest = System.Net.WebRequest.Create("http://wms.umea.se/geoserver/rest/" & Url)
         req.Headers.Add("authorization", "Basic " & Tools.BasicAuthToken(LoggdinUser))
         req.Method = "GET"

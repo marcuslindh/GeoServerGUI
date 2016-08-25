@@ -9,5 +9,10 @@ Public Class MvcApplication
         GlobalConfiguration.Configure(AddressOf WebApiConfig.Register)
         RouteConfig.RegisterRoutes(RouteTable.Routes)
 
+        Application("LoggedInUsers") = New List(Of User)
+
+
     End Sub
+
+
 End Class

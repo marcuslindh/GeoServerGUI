@@ -158,12 +158,18 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\HomeController.vb" />
+    <Compile Include="Controllers\LayergroupsController.vb" />
+    <Compile Include="Controllers\LoginController.vb" />
+    <Compile Include="Controllers\LogoutController.vb" />
+    <Compile Include="Controllers\ProxyController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Proxy.vb" />
     <Compile Include="Models\Tools.vb" />
     <Compile Include="Models\User.vb" />
+    <Compile Include="Models\UserMGM.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -189,6 +195,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\App.css">
+      <DependentUpon>App.less</DependentUpon>
+    </Content>
+    <Content Include="css\App.less" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="css\Frame.css">
+      <DependentUpon>Frame.less</DependentUpon>
+    </Content>
+    <Content Include="css\Frame.less" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -198,6 +216,20 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="css\App.min.css">
+      <DependentUpon>App.css</DependentUpon>
+    </Content>
+    <Content Include="css\Frame.min.css">
+      <DependentUpon>Frame.css</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.js" />
+    <Content Include="js\LayerGroups.js" />
+    <Content Include="js\SideBar.js" />
+    <Content Include="js\Start.js" />
+    <Content Include="Views\Home\index.vbhtml" />
+    <Content Include="Views\Login\index.vbhtml" />
+    <Content Include="Views\Shared\_LoginLayoutPage.vbhtml" />
+    <Content Include="Views\Layergroups\index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -215,13 +247,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="css\" />
-    <Folder Include="js\" />
+    <Folder Include="Views\Logout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
